@@ -207,7 +207,7 @@ extension String {
     /// 将邮箱保护字段替换为解码后的字段
     public func decodingProtectedFields() -> String {
         var result = self
-        let pattern = #"<a href.*?data-cfemail="([0-9a-f]+).*?</a>"#
+        let pattern = #"<a href="/cdn-cgi/l/email.*?(\w+)">.*?</a>"#
         let matches = allMatches(pattern: pattern)
         for match in matches {
             let email = match.captures[0]!.decodeCFMail()
