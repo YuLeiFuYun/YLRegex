@@ -1,6 +1,6 @@
 ## Requirements
 
-* iOS 13.0+
+* iOS 10.0+
 * Swift 5.1+
 
 
@@ -13,7 +13,7 @@ To integrate YLRegex into your Xcode project using CocoaPods, specify it in your
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '13.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'MyApp' do
