@@ -209,8 +209,9 @@ extension String {
         var result = self
         let pattern = #"<a href="/cdn-cgi/l/email.*?(\w+)">.*?</a>"#
         let matches = allMatches(pattern: pattern)
+        var email = ""
         for match in matches {
-            let email = match.captures[0]!.decodeCFMail()
+            email = match.captures[0]!.decodeCFMail().replacingOccurrences(of: "\0", with: "")
             result.replaceAll(matching: pattern, with: email)
         }
         
